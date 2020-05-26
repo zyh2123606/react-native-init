@@ -1,6 +1,6 @@
-# rhnfp-driver-app
+# react-native-init
 
-云矿山APP
+react-native初始化项目基座
 
 # react-native集成code-push
 # 版本要求
