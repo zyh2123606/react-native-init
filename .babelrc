@@ -1,0 +1,29 @@
+{
+	"plugins": [
+		[
+			"import",
+			{
+				"libraryName": "@ant-design/react-native"
+			}
+		],
+		[
+			"@babel/plugin-proposal-decorators",
+			{
+				"legacy": true
+			}
+		],
+		[
+			"module-resolver",
+			{
+				"alias": {
+					"@": "./src"
+				},
+				"extensions": [
+                    ".js",
+                    ".ios.js",
+                    ".android.js"
+                ]
+			}
+		]
+	]
+}
