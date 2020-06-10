@@ -1,6 +1,6 @@
 import React, { useEffect, useState, FunctionComponent } from 'react'
 import { View, Text, TouchableOpacity, ImageBackground, Image, ActivityIndicator } from 'react-native'
-import { NavigationProp } from '@react-navigation/native'
+import { useNavigation } from '@react-navigation/native'
 import { SetStatusBar, Header } from '@/components'
 import { useDynamicStyleSheet, DynamicStyleSheet, useDynamicValue } from 'react-native-dark-mode'
 import { Colors } from '@/colorManager'
@@ -11,11 +11,11 @@ import { NavigationUtil } from '@/utils'
 import { saveCurrentLoginUser } from '@/utils/appData'
 
 interface IProps {
-    navigation: NavigationProp<any>
     form: any
 }
-const Login: FunctionComponent<IProps> = ({ navigation, form }) => {
+const Login: FunctionComponent<IProps> = ({ form }) => {
     const { getFieldDecorator } = form
+    const navigation = useNavigation()
     const placeHolderColor = useDynamicValue(Colors.common_level3_base_color)
     const Style = useDynamicStyleSheet(dyStyle)
     const [visible, setVisible] = useState(false)

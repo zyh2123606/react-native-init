@@ -1,6 +1,6 @@
-import React, { useEffect, useState, FunctionComponent } from 'react'
+import React, { useState, FunctionComponent } from 'react'
 import { View, Text, TouchableOpacity } from 'react-native'
-import { NavigationProp } from '@react-navigation/native'
+import { useNavigation } from '@react-navigation/native'
 import { SetStatusBar, Icon, Header } from '@/components'
 import { useDynamicStyleSheet, DynamicStyleSheet, useDynamicValue } from 'react-native-dark-mode'
 import { Colors } from '@/colorManager'
@@ -8,10 +8,10 @@ import { Toast, Button, InputItem } from '@ant-design/react-native'
 import { createForm } from 'rc-form'
 
 interface IProps {
-    navigation: NavigationProp<{}>,
     form: any
 }
-const SetPassword: FunctionComponent<IProps> = ({ navigation, form }) => {
+const SetPassword: FunctionComponent<IProps> = ({ form }) => {
+    const navigation = useNavigation()
     const Style = useDynamicStyleSheet(dyStyle)
     const { getFieldDecorator } = form
     const placeHolderColor = useDynamicValue(Colors.common_level3_base_color)

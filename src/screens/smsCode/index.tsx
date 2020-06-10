@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState, FunctionComponent } from 'react'
 import { View, Text, TouchableOpacity, TextInput } from 'react-native'
-import { NavigationProp, Route } from '@react-navigation/native'
+import { Route, useNavigation } from '@react-navigation/native'
 import { SetStatusBar, Icon, Header } from '@/components'
 import { useDynamicStyleSheet, DynamicStyleSheet } from 'react-native-dark-mode'
 import { Colors } from '@/colorManager'
@@ -8,11 +8,11 @@ import { Toast } from '@ant-design/react-native'
 import Timer from './timer'
 
 interface IProps {
-    navigation: NavigationProp<{}>
     route: Route<string>
 }
 let CODE_LENGTH = 4
-const SMSCode: FunctionComponent<IProps> = ({ navigation, route }) => {
+const SMSCode: FunctionComponent<IProps> = ({ route }) => {
+    const navigation = useNavigation()
     const { params }: any = route.params
     const Style = useDynamicStyleSheet(dyStyle)
     const codeInp = useRef<any>(null)
