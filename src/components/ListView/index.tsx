@@ -2,7 +2,6 @@ import React, { Component, SFC, ReactNode, createRef } from 'react'
 import { ListView } from '@ant-design/react-native'
 import { View, Text, ActivityIndicator, StyleSheet, ViewStyle, Image } from 'react-native'
 import { Placeholder, PlaceholderLine, Fade } from 'rn-placeholder'
-import { ListProps } from '@ant-design/react-native/lib/list'
 
 interface IProps {
     refreshable?: boolean,
