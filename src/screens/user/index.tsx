@@ -9,6 +9,7 @@ import { createForm } from 'rc-form'
 import NoticeWin from './notice'
 import { NavigationUtil } from '@/utils'
 import { saveCurrentLoginUser } from '@/utils/appData'
+import { SelectWin } from '@/components'
 
 interface IProps {
     form: any
@@ -25,7 +26,7 @@ const Login: FunctionComponent<IProps> = ({ form }) => {
         editabled: true
     })
     useEffect(() => {
-        setVisible(true)
+        
     }, [])
     const inphandleChange = (value: string) => {
         setAction({ ...action, disabled: value.length !== 13})
@@ -88,6 +89,7 @@ const Login: FunctionComponent<IProps> = ({ form }) => {
             </TouchableOpacity>
         </View>
         <NoticeWin visible={visible} onClose={closeWin}/>
+        <SelectWin />
     </View>
 }
 export default createForm()(
