@@ -30,7 +30,7 @@
     "qs": "^6.9.4",
     "rc-form": "^2.4.11",
     "react": "16.13.1",
-    "react-native": "0.63.3",
+    "react-native": "0.64.1",
     "react-native-barcode-mask": "^1.2.2",
     "react-native-camera": "^3.26.0",
     "react-native-code-push": "^6.2.0",
